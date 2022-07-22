@@ -1,0 +1,53 @@
+-- TODO!! CRITICAL!!! redesign factories to use new design that stops requesting when production should stop and sends ingridents to active provider
+-- TODO: Remove all the green wires since I can just use roboport to get logistics inventory
+-- TODO: use mod output of receipies to determine the overall inventory I want to stockpile and how much of each ingrident to request for any given receipie. can mass generate everything!
+-- TODO: create a new LTN provider and requester blueprint to generically reuse. for the provider use requester/active provider, and script to ensure that exactly how much can be carried in a train is ready to go (and maybe double for things like core fragment shipments that happen often)
+-- TODO: Design new empty barrel and fill barrel factory that requests way more and uses warehouses!
+-- TODO: massively scale up urannum mining. get another outpost. put drills everywhere at current one
+-- TODO: finish emptying light oil barrels! just burned a bunch to create rocket fuel
+
+-- TODO: create more dropoffs (I should be able to just line them all up directly using signals? would need to manage priority? Or just have em loop off)
+-- TODO: Create a passenger train and parking spots at each stop
+-- TODO: investigate if chain signals will be useful? (seems like just for intersections)
+
+-- REST OF TODOS ARE OUTDATED
+
+-- TODO: reorganize storage in a clear way to make sure everything is wired. Also hunt down any storage units idiling and massively reduce robo port coverage area in main base (stone, copper, iron can become train stops and I have a ton already)
+-- (bascially don't include the buffer or active provider chests in the count, JUST storage since it fucks with how it all works. I may need to lower the counts after this change)
+-- TODO: decommission power plants at base
+-- TODO: move central power generation away from base, easy to send power back over wires and can supplly uraninum via burn
+
+-- TOOOOOODO: change it so all filters work on GREATER than one. Then use numbers greater than one for specific things.
+-- EX: 2 == Resource is below a dangerous threshold. then trigger an alarm
+-- TODO: Actually setup logistics train network since I now have everything for it!!
+-- then stop using drones to transmit copper and stone!!
+-- TODO: meteor defense
+-- TODO: combat roboport coverage
+-- TODO: uraninum ore mining (include sulfuric acid wagon bascially)
+-- TODO: have a cargo wagon just for fuel on train maybe??
+-- TODO: Add double check for duplicate keys in amountss
+-- TODO: Create extra special alert for uraninum fuel cell loss
+-- TODO: add a cargo for fuel, then drop some off at each train stop and use logistics to insert it back in
+-- TODO: build fluid warehouses since barrels are ineffienct. basically scale up and down barrel production
+-- TODO: improve radar coverage
+-- TODO! Massively scale up iron production. being constrained by ore....
+-- TODO: add a general check for any resouce being very large (maybe like 100 by default, plus 3000 if defined in the config)
+-- TODO: set an alert for no mining happening when ore should be produduced
+-- TODO: set alert for no production happening for X minutes when production should be happening
+-- TODO: set production dynamically based on if the rate is going down or up!
+-- TODO: START CORE MINING!!! need resources
+-- TODO: Debug why its showign the wrong amount
+-- TODO: Double check that I have wired everything correctly, one mistake fucks up the whole production line
+-- TODO: Wire up crude oil factility to stop producing oil if not needed (already refactored for robo production)
+-- TODO: force research uraninum stuff and rest of logistics so I can start that prouduction and clean up inventory
+-- NOTE: using drones alot uses tons of power, make sure to find ways to minimize usage
+-- TODO: setup an alarm if any critical science component stops producing when under limit!!
+-- TODO: setup alarms on water pumps to power stataion
+-- TODO: setup alarms on power usage limits
+-- TODO: refactor external mining setups to allow for repair storage? since right now it fucks with the external barrel logic (basically use ltn)
+-- TODO: move solid oil production to a fluid setup since it's getting bottleneckedh hardcore
+-- TODO: alarm if all labs have been inactive for more than 2 minutes
+-- TODO: build LTN stops for all key resources to keep mining outposts secure (laser turrets, walls, roboports, chests, belts, etc....)
+-- TODO: finish recycling all the old stuff!
+-- TODO: actually setup some accumulators
+-- TODO: fix cricitcal resource low alert!
