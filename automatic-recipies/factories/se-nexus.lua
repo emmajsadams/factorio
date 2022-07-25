@@ -2,8 +2,14 @@
 local resource_key = 'se-nexus'
 local required_resources =
 {
-  {'se-superconductive-cable', 80},  {'se-naquium-processor', 4},  {'se-naquium-tessaract', 80},  {'se-heavy-assembly', 40},  {'se-aeroframe-bulkhead', 40},
+  {'se-superconductive-cable', 20},  {'se-naquium-processor', 1},  {'se-naquium-tessaract', 20},  {'se-heavy-assembly', 10},  {'se-aeroframe-bulkhead', 10},
 }
+
+if red[resource_key] >= 1 then
+  out['signal-info'] = 1
+else
+  out['signal-info'] = 2
+end
 
 for _, required_resource_tuple in ipairs(required_resources)
 do
@@ -12,10 +18,8 @@ do
 
   if red[resource_key] >= 1 then
     out[required_resource_key] = required_resource_amount
-    out['signal-info'] = 1
   else
     out[required_resource_key] = nil
-    out['signal-info'] = 2
   end
 end
   

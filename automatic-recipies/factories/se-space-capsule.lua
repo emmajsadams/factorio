@@ -2,8 +2,14 @@
 local resource_key = 'se-space-capsule'
 local required_resources =
 {
-  {'low-density-structure', 400},  {'rocket-control-unit', 400},  {'solar-panel', 200},  {'accumulator', 200},  {'rocket-fuel', 400},  {'glass', 200},  {'se-heat-shielding', 400},
+  {'low-density-structure', 100},  {'rocket-control-unit', 100},  {'solar-panel', 50},  {'accumulator', 50},  {'rocket-fuel', 100},  {'glass', 50},  {'se-heat-shielding', 100},
 }
+
+if red[resource_key] >= 1 then
+  out['signal-info'] = 1
+else
+  out['signal-info'] = 2
+end
 
 for _, required_resource_tuple in ipairs(required_resources)
 do
@@ -12,10 +18,8 @@ do
 
   if red[resource_key] >= 1 then
     out[required_resource_key] = required_resource_amount
-    out['signal-info'] = 1
   else
     out[required_resource_key] = nil
-    out['signal-info'] = 2
   end
 end
   

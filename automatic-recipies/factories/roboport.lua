@@ -2,8 +2,14 @@
 local resource_key = 'roboport'
 local required_resources =
 {
-  {'electric-motor', 200},  {'advanced-circuit', 200},  {'concrete', 200},  {'steel-plate', 200},
+  {'electric-motor', 50},  {'advanced-circuit', 50},  {'concrete', 50},  {'steel-plate', 50},
 }
+
+if red[resource_key] >= 1 then
+  out['signal-info'] = 1
+else
+  out['signal-info'] = 2
+end
 
 for _, required_resource_tuple in ipairs(required_resources)
 do
@@ -12,10 +18,8 @@ do
 
   if red[resource_key] >= 1 then
     out[required_resource_key] = required_resource_amount
-    out['signal-info'] = 1
   else
     out[required_resource_key] = nil
-    out['signal-info'] = 2
   end
 end
   

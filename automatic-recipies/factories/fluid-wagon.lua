@@ -2,8 +2,14 @@
 local resource_key = 'fluid-wagon'
 local required_resources =
 {
-  {'iron-gear-wheel', 40},  {'pipe', 32},  {'storage-tank', 4},  {'steel-plate', 64},
+  {'iron-gear-wheel', 10},  {'pipe', 8},  {'storage-tank', 1},  {'steel-plate', 16},
 }
+
+if red[resource_key] >= 1 then
+  out['signal-info'] = 1
+else
+  out['signal-info'] = 2
+end
 
 for _, required_resource_tuple in ipairs(required_resources)
 do
@@ -12,10 +18,8 @@ do
 
   if red[resource_key] >= 1 then
     out[required_resource_key] = required_resource_amount
-    out['signal-info'] = 1
   else
     out[required_resource_key] = nil
-    out['signal-info'] = 2
   end
 end
   

@@ -2,8 +2,14 @@
 local resource_key = 'se-delivery-cannon-capsule'
 local required_resources =
 {
-  {'copper-cable', 40},  {'low-density-structure', 4},  {'explosives', 20},  {'se-heat-shielding', 4},
+  {'copper-cable', 10},  {'low-density-structure', 1},  {'explosives', 5},  {'se-heat-shielding', 1},
 }
+
+if red[resource_key] >= 1 then
+  out['signal-info'] = 1
+else
+  out['signal-info'] = 2
+end
 
 for _, required_resource_tuple in ipairs(required_resources)
 do
@@ -12,10 +18,8 @@ do
 
   if red[resource_key] >= 1 then
     out[required_resource_key] = required_resource_amount
-    out['signal-info'] = 1
   else
     out[required_resource_key] = nil
-    out['signal-info'] = 2
   end
 end
   

@@ -2,8 +2,14 @@
 local resource_key = 'rocket-silo'
 local required_resources =
 {
-  {'electric-engine-unit', 400},  {'advanced-circuit', 800},  {'pipe', 400},  {'concrete', 4000},  {'steel-plate', 2000},
+  {'electric-engine-unit', 100},  {'advanced-circuit', 200},  {'pipe', 100},  {'concrete', 1000},  {'steel-plate', 500},
 }
+
+if red[resource_key] >= 1 then
+  out['signal-info'] = 1
+else
+  out['signal-info'] = 2
+end
 
 for _, required_resource_tuple in ipairs(required_resources)
 do
@@ -12,10 +18,8 @@ do
 
   if red[resource_key] >= 1 then
     out[required_resource_key] = required_resource_amount
-    out['signal-info'] = 1
   else
     out[required_resource_key] = nil
-    out['signal-info'] = 2
   end
 end
   

@@ -2,8 +2,14 @@
 local resource_key = 'se-rocket-launch-pad'
 local required_resources =
 {
-  {'electric-engine-unit', 800},  {'processing-unit', 800},  {'steel-chest', 40},  {'pipe', 400},  {'storage-tank', 40},  {'concrete', 4000},  {'steel-plate', 4000},  {'radar', 40},
+  {'electric-engine-unit', 200},  {'processing-unit', 200},  {'steel-chest', 10},  {'pipe', 100},  {'storage-tank', 10},  {'concrete', 1000},  {'steel-plate', 1000},  {'radar', 10},
 }
+
+if red[resource_key] >= 1 then
+  out['signal-info'] = 1
+else
+  out['signal-info'] = 2
+end
 
 for _, required_resource_tuple in ipairs(required_resources)
 do
@@ -12,10 +18,8 @@ do
 
   if red[resource_key] >= 1 then
     out[required_resource_key] = required_resource_amount
-    out['signal-info'] = 1
   else
     out[required_resource_key] = nil
-    out['signal-info'] = 2
   end
 end
   

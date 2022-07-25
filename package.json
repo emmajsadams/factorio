@@ -1,0 +1,22 @@
+{
+  "name": "factorio",
+  "version": "1.0.0",
+  "description": "factorio scripts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emmajsadams/factorio.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/emmajsadams/factorio/issues"
+  },
+  "homepage": "https://github.com/emmajsadams/factorio#readme",
+  "dependencies": {
+    "@types/node": "^18.0.6"
+  }
+}

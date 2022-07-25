@@ -2,8 +2,14 @@
 local resource_key = 'productivity-module-5'
 local required_resources =
 {
-  {'se-bioscrubber', 200},  {'productivity-module-4', 8},  {'se-biological-catalogue-1', 4},
+  {'se-bioscrubber', 50},  {'productivity-module-4', 2},  {'se-biological-catalogue-1', 1},
 }
+
+if red[resource_key] >= 1 then
+  out['signal-info'] = 1
+else
+  out['signal-info'] = 2
+end
 
 for _, required_resource_tuple in ipairs(required_resources)
 do
@@ -12,10 +18,8 @@ do
 
   if red[resource_key] >= 1 then
     out[required_resource_key] = required_resource_amount
-    out['signal-info'] = 1
   else
     out[required_resource_key] = nil
-    out['signal-info'] = 2
   end
 end
   
